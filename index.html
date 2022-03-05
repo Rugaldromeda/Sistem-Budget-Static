@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Orçamento Vendas Mês</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <header class="menu" data-header-menu>
+            <!--img class="menu__img" src="img/FAV.png" alt=""-->
+            <nav>
+                <ul class="menu__ul">
+                    <li>
+                        <a class="menu__link" href="">Orçamento Financeiro Hortifruti R.E.</a>
+                    </li>
+                    
+                </ul>
+            </nav>
+        </header>
+        
+        <section class="budget">
+            <form data-filter>
+                <label class="report__label" for="dataYm">Defina mês e ano </label class="report__label">
+                <input type="month" name="dateYm" id="dateYm" data-month-year>
+                <button type="submit">Buscar</button>
+            </form>
+            <div class="tabs">
+                <button class="tabs__button tabs__receitas receitas tabs__button__active">Receitas Loja Ceci</button>
+                <button class="tabs__button tabs__receitas__2 receitas__2">Receitas Loja José Neves</button>
+                <button class="tabs__button tabs__despesas despesas">Despesas</button>
+                <button class="tabs__button tabs__balanco balanco">Balanço</button>
+            </div>
+            <div class="tab__content" id="tabs__receitas">
+                <legend class="report__legend">Vendas <a class="monthName"></a> de <a class="yearName"></a> </legend>
+                <div class="report">
+                    <form class="report__form__add receiptStore1" id="receiptStore1" data-receipt-form>
+                        <legend class="report__legend">Adicionar Receitas</legend>
+                        <ul class="report__form__input">
+                            <li class="report__li__date">
+                                <label class="report__label" for="data">Data</label class="report__label">
+                                <input class="report__input__date" data-receipt-date id="data" type="date">
+                            </li>
+                            <li>
+                                <label class="report__label" for="money">Dinheiro</label class="report__label">
+                                    <input class="report__input" data-receipt-money  id="money" type="text">
+                            </li>
+                            <li>
+                                <label class="report__label" for="debit">Débito</label class="report__label">
+                                <input class="report__input" data-receipt-debit id="debit" type="text">
+                            </li>
+                            <li>
+                                <label class="report__label" for="credit">Credito</label class="report__label">
+                                <input class="report__input" data-receipt-credit id="credit" type="text">
+                            </li>
+                            <li>
+                                <label class="report__label" for="voucher">Voucher</label class="report__label">
+                                <input class="report__input" data-receipt-voucher id="voucher" type="text">
+                            </li>
+                        </ul>
+                        <input type="hidden" data-index>
+                        <input type="hidden" data-tr-id>
+                        
+                        
+                        <span class="report__submit__cancel" id="receiptStore1" data-submit-cancel >Cancelar</span>
+                        <button class="report__submit" data-submit-form  type="submit">Adicionar</button>
+                    </form>
+                    <table class="report__table tableReceiptStore1" data-table-receipt-store id="receiptStore1" value="">
+                       
+                    </table>
+                </div>
+                
+            </div>
+            <div class="tab__content invisible" id="tabs__receitas__2">
+                <legend class="report__legend report__data">Vendas <a class="monthName"> Mes </a> de <a class="yearName"></a></legend>
+                <div class="report">
+                    <form class="report__form__add receiptStore2" id="receiptStore2" value="false" data-receipt-form>
+                        <legend class="report__legend">Adicionar Receitas</legend>
+                        <ul class="report__form__input">
+                            <li class="report__li__date">
+                                <label class="report__label" for="data">Data</label class="report__label">
+                                <input class="report__input__date" data-receipt-date id="data" type="date">
+                            </li>
+                            <li>
+                                <label class="report__label" for="money">Dinheiro</label class="report__label">
+                                    <input class="report__input" data-receipt-money  id="money" type="text">
+                            </li>
+                            <li>
+                                <label class="report__label" for="debit">Débito</label class="report__label">
+                                <input class="report__input" data-receipt-debit id="debit" type="text">
+                            </li>
+                            <li>
+                                <label class="report__label" for="credit">Credito</label class="report__label">
+                                <input class="report__input" data-receipt-credit id="credit" type="text">
+                            </li>
+                            <li>
+                                <label class="report__label" for="voucher">Voucher</label class="report__label">
+                                <input class="report__input" data-receipt-voucher id="voucher" type="text">
+                            </li>
+                        </ul>
+                        
+                        <input type="hidden" data-index>
+                        <input type="hidden" data-tr-id>
+
+                        <span class="report__submit__cancel" id="receiptStore2" data-submit-cancel >Cancelar</span>
+                        <button class="report__submit" data-submit-form  type="submit">Adicionar</button>
+                    </form>
+                    <table class="report__table tableReceiptStore2" data-table-receipt-store id="receiptStore2" value="">
+                       
+                    </table>
+                </div>
+                
+            </div>
+            <div class="tab__content invisible" id="tabs__despesas">
+                <legend class="report__legend">Despesas <a class="monthName"></a> de <a class="yearName"></a></legend>
+                <div class="report">
+                    <form class="report__form__add expenses" id="expenses"  data-expense-form>
+                        <legend class="report__legend">Adicionar Despesas</legend>
+                        <ul class="report__form__input">
+                            <li >
+                                <label class="report__label" for="data">Data</label class="report__label">
+                                <input class="report__input__date" data-expense-date id="data" type="date">
+                            </li>
+                            <li>
+                                <label class="report__label" for="money">Nome</label class="report__label">
+                                <input class="report__input__name" data-expense-name   type="text">
+                            </li>
+                            <li>
+                                <label class="report__label" for="debit">Valor</label class="report__label">
+                                <input class="report__input" data-expense-value  type="text">
+                            </li>
+                            
+                        </ul>
+                        
+                        <input type="hidden" data-index>
+                        <input type="hidden" data-tr-id>
+                        
+                        <span class="report__submit__cancel" data-submit-cancel="" id="expenses" >Cancelar</span>
+                        <button class="report__submit" data-submit-form  type="submit">Adicionar</button>
+                    </form>
+                    <table class="report__table expensesTable" data-table-expense id="expenses" value="">
+                       
+                    </table>
+                </div>
+            </div>
+            <div class="tab__content invisible" id="tabs__balanco">
+                <legend class="report__legend">Balanço <a class="monthName"></a> de <a class="yearName"></a></legend>
+                
+                <div class="report">    
+                    <form class="report__form__add" data-filter-year>
+                        <p class="report__description">Para gerar um relatorio anual escolha o ano abaixo</p>
+                        <ul class="report__form__input">
+                            <li >
+                                <label class="report__label" for="dataY">Ano</label class="report__label">
+                                <input class="report__input" id="dataY" type="number" data-input-year placeholder="YYYY" min="2011" max="2100">
+                            </li> 
+                            <li>
+                                <button type="submit" class="report__submit">Buscar</button>
+                            </li>
+                        </ul>
+                        
+                        
+                        
+                        
+                        
+                    </form>
+                    <table class="report__table__balance" data-table-expense id="balance">
+                        <tbody>
+                            <tr>
+                              <th>
+                                Total Receitas Loja Ceci
+                              </th>
+                              <td >R$ <a class="totalStore1">0</a></td>
+                            </tr>
+                            <tr>
+                              <th>
+                                Total Receitas Loja José Neves
+                              </th>
+                              <td>R$ <a class="totalStore2">0</a></td>
+                            </tr>
+                            <tr>
+                              <th>
+                                Total Despesas
+                              </th>
+                              <td > R$ <a class="total-expense">0</a></td>
+                            </tr>
+                            <tr>
+                              <th>
+                                Balanço total
+                              </th>
+                              <td >
+                                <div>R$ <a class="balance"></a></div>
+                              </td>
+                            </tr>
+                          </tbody>
+                    </table>
+                   
+                </div>
+            </div>
+        </section>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.0/moment.min.js"></script>
+        <script type="module" src="main.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,8 @@
+.budget {
+    display: grid;
+    align-content: center;
+    padding: 20px;
+}
+.invisible {
+    display: none;
+}

@@ -1,0 +1,56 @@
+/* 
+    File Name: global.css
+    Template Name: Orçamento Empresarial
+    Created By: Gabriel Lima 
+
+
+    1 - import fonts
+    2 - global style
+*/
+
+/* 1 fonts*/
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback");
+
+/* 2 - global style*/
+body {
+	background: #fff;
+	color: black;
+	font-family: 'Source Sans Pro';
+	font-weight: 450;
+	text-align: left;
+    text-decoration: none;
+}
+header{
+    width: 100%;
+}
+h1, h2, h3 ,h4, h5, h6 {
+    font-weight: 550;
+}
+h1 {
+    font-size: 2.5em;
+}
+h2 {
+    font-size: 2.2em;
+}
+h3 {
+    font-size: 2em;
+}
+h4 {
+    font-size: 1.8em;
+}
+h5 {
+    font-size: 1.5em;
+}
+h6 {
+    font-size: 1.2em;
+}
+a:-webkit-any-link {
+    text-decoration: none;
+}
+
+
+button {
+    color: black;
+    background-color: white;
+}
+/* */
