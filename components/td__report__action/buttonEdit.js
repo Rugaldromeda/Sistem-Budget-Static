@@ -13,6 +13,7 @@ const loadTrInput = (loadtable, id, trId) => {
     const credit = receiptSaved[index].creditValue;
     const voucher = receiptSaved[index].voucherValue;
     const total = receiptSaved[index].totalDay;
+    const qtClient = receiptSaved[index].qtClientValue;
 
     const data = {
         dateSelect,
@@ -20,7 +21,8 @@ const loadTrInput = (loadtable, id, trId) => {
         debit,
         credit,
         voucher,
-        total
+        total,
+        qtClient
     }
 
 
@@ -33,6 +35,8 @@ const loadTrInput = (loadtable, id, trId) => {
     formClass.querySelector("[data-receipt-credit]").value = data.credit;
 
     formClass.querySelector("[data-receipt-voucher]").value = data.voucher;
+
+    formClass.querySelector("[data-receipt-qtclient]").value = data.qtClient;
 
     formClass.querySelector("[data-index]").value = index;
     formClass.querySelector("[data-tr-id]").value = `${trId}`
@@ -66,6 +70,9 @@ export const editTr = (editId) => {
 
     const totalDay = moneyValue + debitValue + creditValue + voucherValue;
 
+    const qtClients = editInputs.querySelector("[data-receipt-qtclient]");
+    const qtClientValue = Number(qtClients.value);
+
     const inputHiddenIndex = editInputs.querySelector("[data-index");
     const index= inputHiddenIndex.value;
 
@@ -82,7 +89,8 @@ export const editTr = (editId) => {
         debitValue,
         creditValue,
         voucherValue, 
-        totalDay
+        totalDay,
+        qtClientValue
     }
     const receiptSaved = JSON.parse(localStorage.getItem(`${trIdValue}`)) || [];
 

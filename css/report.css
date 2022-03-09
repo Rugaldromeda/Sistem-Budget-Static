@@ -18,10 +18,31 @@
 }
 .report__form__input{
     display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-around;
+    gap: 5px;
+    row-gap: 5px;
+    margin-top: 5px;
+    
+}
+.report__form__input__balance{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    text-align: left;
+    gap: 5px;
+    row-gap: 5px;
+    margin-top: 5px;
+    width: 220px;
+    
+}
+.report__form__input__expense{
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: space-around;
     gap: 5px;
     row-gap: 5px;
+    margin-top: 5px;
     
 }
 .report__form__balance{
@@ -88,7 +109,7 @@
     font-weight: 700;
 }
 .report__table__name{
-    width: 120px !important;
+    width: 160px !important;
 }
 .report__table td {
     border-bottom: solid 1px;
@@ -101,8 +122,9 @@
     font-weight: 700;
 }
 .report__description{
-    margin: 0 auto 10px ;
+    margin: 5px auto 10px ;
     font-weight: 500;
+    text-align: left;
 }
 /* balance */
 .report__table__balance {
@@ -129,7 +151,12 @@
     border-left: solid 1px;
     width: 200px;
 }
-
+.th__qtClients{
+    width: 110px !important;
+}
+.td__qtClients{
+    width: 100px !important;
+}
 .monthName {
     text-transform:capitalize;
 }

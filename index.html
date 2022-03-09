@@ -15,7 +15,7 @@
             <nav>
                 <ul class="menu__ul">
                     <li>
-                        <a class="menu__link" href="">Orçamento Financeiro Hortifruti R.E.</a>
+                        <a class="menu__link" href="">Orçamento Financeiro Empresa Y</a>
                     </li>
                     
                 </ul>
@@ -29,8 +29,8 @@
                 <button type="submit">Buscar</button>
             </form>
             <div class="tabs">
-                <button class="tabs__button tabs__receitas receitas tabs__button__active">Receitas Loja Ceci</button>
-                <button class="tabs__button tabs__receitas__2 receitas__2">Receitas Loja José Neves</button>
+                <button class="tabs__button tabs__receitas receitas tabs__button__active">Receitas Loja 1</button>
+                <button class="tabs__button tabs__receitas__2 receitas__2">Receitas Loja 2</button>
                 <button class="tabs__button tabs__despesas despesas">Despesas</button>
                 <button class="tabs__button tabs__balanco balanco">Balanço</button>
             </div>
@@ -44,6 +44,7 @@
                                 <label class="report__label" for="data">Data</label class="report__label">
                                 <input class="report__input__date" data-receipt-date id="data" type="date">
                             </li>
+                            
                             <li>
                                 <label class="report__label" for="money">Dinheiro</label class="report__label">
                                     <input class="report__input" data-receipt-money  id="money" type="text">
@@ -59,6 +60,10 @@
                             <li>
                                 <label class="report__label" for="voucher">Voucher</label class="report__label">
                                 <input class="report__input" data-receipt-voucher id="voucher" type="text">
+                            </li>
+                            <li>
+                                <label class="report__label" for="qtClient">Qt. Clientes</label class="report__label">
+                                <input class="report__input" data-receipt-qtclient  id="qtClient" type="number">
                             </li>
                         </ul>
                         <input type="hidden" data-index>
@@ -100,6 +105,10 @@
                                 <label class="report__label" for="voucher">Voucher</label class="report__label">
                                 <input class="report__input" data-receipt-voucher id="voucher" type="text">
                             </li>
+                            <li>
+                                <label class="report__label" for="qtClient">Qt. Clientes</label class="report__label">
+                                <input class="report__input" data-receipt-qtclient  id="qtClient" type="number">
+                            </li>
                         </ul>
                         
                         <input type="hidden" data-index>
@@ -119,7 +128,7 @@
                 <div class="report">
                     <form class="report__form__add expenses" id="expenses"  data-expense-form>
                         <legend class="report__legend">Adicionar Despesas</legend>
-                        <ul class="report__form__input">
+                        <ul class="report__form__input__balance">
                             <li >
                                 <label class="report__label" for="data">Data</label class="report__label">
                                 <input class="report__input__date" data-expense-date id="data" type="date">
@@ -149,55 +158,84 @@
             <div class="tab__content invisible" id="tabs__balanco">
                 <legend class="report__legend">Balanço <a class="monthName"></a> de <a class="yearName"></a></legend>
                 
-                <div class="report">    
-                    <form class="report__form__add" data-filter-year>
-                        <p class="report__description">Para gerar um relatorio anual escolha o ano abaixo</p>
-                        <ul class="report__form__input">
-                            <li >
-                                <label class="report__label" for="dataY">Ano</label class="report__label">
-                                <input class="report__input" id="dataY" type="number" data-input-year placeholder="YYYY" min="2011" max="2100">
-                            </li> 
-                            <li>
-                                <button type="submit" class="report__submit">Buscar</button>
-                            </li>
-                        </ul>
-                        
-                        
-                        
-                        
-                        
-                    </form>
+                <div class="report">  
+                    <div>
+                        <form class="report__form__add" data-filter-year>
+                            <p class="report__description">Para gerar um relatorio anual escolha o ano abaixo</p>
+                            <ul class="report__form__input__balance">
+                                <li >
+                                    <label class="report__label" for="dataY">Ano</label class="report__label">
+                                    <input class="report__input" id="dataY" type="number" data-input-year placeholder="YYYY" min="2011" max="2100">
+                                </li> 
+                                <li>
+                                    <button type="submit" class="report__submit">Buscar</button>
+                                </li>
+                            </ul>
+                            
+                        </form>
+                        <form class="report__form__add" data-filter-period>
+                            <p class="report__description">Para gerar um relatorio por periodo escolha as datas de inicio e fim abaixo abaixo</p>
+                            <ul class="report__form__input__balance">
+                                <li >
+                                    <label class="report__label" for="dataY">Data inicio</label class="report__label">
+                                    <input class="report__input__date" id="dataY" type="date" data-input-initial  min="2011" max="2100">
+                                </li> 
+                                <li >
+                                    <label class="report__label" for="dataY">Data final</label class="report__label">
+                                    <input class="report__input__date" id="dataY" type="date" data-input-final  min="2011" max="2100">
+                                </li> 
+                                <li>
+                                    <button type="submit" class="report__submit">Buscar</button>
+                                </li>
+                            </ul>
+                            
+                        </form>
+                    </div>  
+                    
                     <table class="report__table__balance" data-table-expense id="balance">
                         <tbody>
                             <tr>
                               <th>
-                                Total Receitas Loja Ceci
+                                Total Receitas Loja 1
                               </th>
                               <td >R$ <a class="totalStore1">0</a></td>
+                              <th class="th__qtClients">
+                                Qt. Clientes
+                              </th>
+                              <td class="td__qtClients qt1">0</a></td>
+                              
                             </tr>
                             <tr>
                               <th>
-                                Total Receitas Loja José Neves
+                                Total Receitas Loja 2
                               </th>
                               <td>R$ <a class="totalStore2">0</a></td>
+                              <th class="th__qtClients">
+                                Qt. Clientes
+                              </th>
+                              <td class="td__qtClients qt2">0</td>
                             </tr>
                             <tr>
                               <th>
                                 Total Despesas
                               </th>
                               <td > R$ <a class="total-expense">0</a></td>
+                              <th class="th__qtClients">
+                                Total Clientes
+                              </th>
+                              <td class="td__qtClients qtTotal">0</a></td>
                             </tr>
                             <tr>
                               <th>
                                 Balanço total
                               </th>
                               <td >
-                                <div>R$ <a class="balance">0</a></div>
+                                <div>R$ <a class="balance"></a></div>
                               </td>
+                              <td></td>
                             </tr>
                           </tbody>
                     </table>
-                   
                 </div>
             </div>
         </section>

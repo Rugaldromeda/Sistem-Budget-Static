@@ -20,6 +20,7 @@ export const tablesLoad = () => {
                             <th>Credito</th>
                             <th>Voucher</th>
                             <th>Total</th>
+                            <th>Qt.Clientes</th>
                             <th>Ações</th>
                         </thead>`;
         const listTfoot = `<tfoot data-tfoot>
@@ -29,6 +30,7 @@ export const tablesLoad = () => {
                                 <th>Credito</th>
                                 <th>Voucher</th>
                                 <th>Total</th>
+                                <th>Qt.Clientes</th>
                                 <th>Ações</th>
                             </tfoot>`;
 

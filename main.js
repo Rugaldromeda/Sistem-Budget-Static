@@ -33,6 +33,7 @@ import { setDateCurrent, filterDate } from "./service/setDateCurrent.js";
 import { balance } from "./service/balance.js"
 import { filterYear } from "./service/searchBalance.js";
 import { clearForm } from "./components/cancel.js";
+import { getPeriod } from "./service/searchPeriod.js";
 
 const formFilter = document.querySelector("[data-filter]")
 formFilter.addEventListener("submit", filterDate)
@@ -66,3 +67,5 @@ const formFilterYear = document.querySelector("[data-filter-year]")
 formFilterYear.addEventListener("submit", filterYear );
 
 
+const filterPeriod = document.querySelector("[data-filter-period]");
+filterPeriod.addEventListener("submit", getPeriod );

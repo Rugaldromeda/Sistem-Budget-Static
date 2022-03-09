@@ -50,6 +50,8 @@ const inputDataReceipt = (formId) => {
 
     const totalDay = parseFloat(moneyValue + debitValue + creditValue + voucherValue).toFixed(2);
 
+    const qtClients = formBody.querySelector("[data-receipt-qtclient]");
+    const qtClientValue = Number(qtClients.value);
 
     const dados = {
         dateFormat,
@@ -59,6 +61,7 @@ const inputDataReceipt = (formId) => {
         creditValue,
         voucherValue, 
         totalDay,
+        qtClientValue,
         id
     }
 
@@ -70,7 +73,7 @@ const inputDataReceipt = (formId) => {
 }
 
 // insere os dados no html
-export const Receipt = ({dateFormat, moneyValue, debitValue, creditValue, voucherValue, totalDay, id }, formId ) => {
+export const Receipt = ({dateFormat, moneyValue, debitValue, creditValue, voucherValue, totalDay,qtClientValue, id }, formId ) => {
     
     const tableTr = document.createElement("tr");
     tableTr.classList.add("table-receipts");
@@ -81,6 +84,7 @@ export const Receipt = ({dateFormat, moneyValue, debitValue, creditValue, vouche
     tableTr.appendChild(createTd(creditValue));
     tableTr.appendChild(createTd(voucherValue));
     tableTr.appendChild(createTd(totalDay)).classList.add("total");
+    tableTr.appendChild(createTd(`<a class="qtClient">${qtClientValue}</a>`));
     tableTr.appendChild(actionArea(tablesLoad, id, formId));
     
     return tableTr;

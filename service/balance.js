@@ -5,11 +5,16 @@ export const balance = () => {
     const expensesTable = document.querySelector(".expensesTable");
     const totalStore1 = store1.querySelectorAll(".total");
     const totalStore2 = store2.querySelectorAll(".total");
+    const qtClient1 = store1.querySelectorAll(".qtClient");
+    const qtClient2 = store2.querySelectorAll(".qtClient");
     const totalExpenses = expensesTable.querySelectorAll(".totalExpense");
 
-    let totalMonthStore1 = 0
-    let totalMonthStore2 = 0
-    let totalExpenseMonth = 0
+
+    let totalMonthStore1 = 0;
+    let totalMonthStore2 = 0;
+    let totalClientStore1 = 0;
+    let totalClientStore2 = 0;
+    let totalExpenseMonth = 0;
 
 
     for (let i = 0; i < totalStore1.length; i++) {
@@ -60,11 +65,49 @@ export const balance = () => {
         tableTotalExpense.innerHTML = expenseTotal;
         
     }
+    for (let i = 0; i < qtClient1.length; i++) {
+
+        
+        const total = qtClient1[i];
+        const totalValue = total.textContent;
+        const valor = parseInt(totalValue);
+    
+        
+        totalClientStore1 += valor;   
+
+        let clientTotal = parseInt(totalClientStore1);
+        
+        const tableTotalClient = document.querySelector(".qt1");
+        tableTotalClient.innerHTML = clientTotal;
+        
+    }
+    for (let i = 0; i < qtClient2.length; i++) {
+
+        
+        const total = qtClient2[i];
+        const totalValue = total.textContent;
+        const valor = parseInt(totalValue);
+    
+        
+        totalClientStore2 += valor;   
+
+        let clientTotal = parseInt(totalClientStore2);
+        
+        const tableTotalClient = document.querySelector(".qt2");
+        tableTotalClient.innerHTML = clientTotal;
+        
+    }
 
     let balance = parseFloat((totalMonthStore1 + totalMonthStore2) - totalExpenseMonth).toFixed(2);
     let tableBalance = document.querySelector(".balance")
+    const clientAll = totalClientStore1 + totalClientStore2;
+    const tableTClient = document.querySelector(".qtTotal");
     if(balance < 0){
         tableBalance.classList.add("negative-balance");
     }
+    else{
+        tableBalance.classList.remove("negative-balance");
+    }
     tableBalance.innerHTML = balance;
+    tableTClient.innerHTML = clientAll;
 }
