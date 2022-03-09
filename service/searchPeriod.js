@@ -94,11 +94,13 @@ const searchPeriod = (startTime, finishTime) => {
     else{
         for (let i = 0; i < periodExpenses.length; i++) {
             const arrayPeriodExp = periodExpenses[i];
-            const totalPeriod = Number(arrayPeriodExp.value);
+            const totalPeriod = parseFloat(arrayPeriodExp.value);
     
             totalPeriodExp += totalPeriod;
+
+            const totalPExp = parseFloat(totalPeriodExp).toFixed(2);
     
-            tableTotalExpense.innerHTML = totalPeriodExp;
+            tableTotalExpense.innerHTML = totalPExp;
             
         }
     }
@@ -113,9 +115,10 @@ const searchPeriod = (startTime, finishTime) => {
             const totalPeriodCl = Number(arrayPeriodR1.totalClQt);
     
             totalPeriodSt1 += totalPeriodR1;
+            const totalPReceipt1 = parseFloat(totalPeriodSt1).toFixed(2);
             totalPeriodCl1 += totalPeriodCl;
             
-            tableTotalReceipt1.innerHTML = totalPeriodSt1;
+            tableTotalReceipt1.innerHTML = totalPReceipt1;
             tableTotalqt1.innerHTML = totalPeriodCl1;
         }
     }
@@ -130,8 +133,9 @@ const searchPeriod = (startTime, finishTime) => {
             const totalPeriodCl = Number(arrayPeriodR2.totalClQt);
     
             totalPeriodSt2 += totalPeriodR2;
+            const totalPReceipt2 = parseFloat(totalPeriodSt2).toFixed(2);
             totalPeriodCl2 += totalPeriodCl;
-            tableTotalReceipt2.innerHTML = totalPeriodSt2;
+            tableTotalReceipt2.innerHTML = totalPReceipt2;
             tableTotalqt2.innerHTML = totalPeriodCl2;
             
         }

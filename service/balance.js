@@ -8,15 +8,16 @@ export const balance = () => {
     const qtClient1 = store1.querySelectorAll(".qtClient");
     const qtClient2 = store2.querySelectorAll(".qtClient");
     const totalExpenses = expensesTable.querySelectorAll(".totalExpense");
-
-
+    
+    
     let totalMonthStore1 = 0;
     let totalMonthStore2 = 0;
     let totalClientStore1 = 0;
     let totalClientStore2 = 0;
     let totalExpenseMonth = 0;
 
-
+    
+    //
     for (let i = 0; i < totalStore1.length; i++) {
 
         
@@ -27,12 +28,19 @@ export const balance = () => {
         
         totalMonthStore1 += valor;   
 
-        let totalMonth1 = parseFloat(totalMonthStore1).toFixed(2);
-        
-        const tableTotalStore1 = document.querySelector(".totalStore1");
-        tableTotalStore1.innerHTML = totalMonth1;
-        
     }
+
+    let totalMonth1 = parseFloat(totalMonthStore1).toFixed(2);
+        
+    const tableTotalStore1 = document.querySelector(".totalStore1");
+    if(totalStore1.length == 0){
+        tableTotalStore1.innerHTML = "0";
+    }
+    else{
+        tableTotalStore1.innerHTML = totalMonth1;
+    }
+    //
+    //
     for (let i = 0; i < totalStore2.length; i++) {
 
         
@@ -42,13 +50,20 @@ export const balance = () => {
     
         
         totalMonthStore2 += valor;   
-
-        let totalMonth2 = parseFloat(totalMonthStore2).toFixed(2);
-        
-        const tableTotalStore2 = document.querySelector(".totalStore2");
-        tableTotalStore2.innerHTML = totalMonth2;
         
     }
+
+    let totalMonth2 = parseFloat(totalMonthStore2).toFixed(2);
+        
+    const tableTotalStore2 = document.querySelector(".totalStore2");
+    if(totalStore2.length == 0){
+        tableTotalStore2.innerHTML = "0";
+    }
+    else{
+        tableTotalStore2.innerHTML = totalMonth2;
+    }
+    //
+    //
     for (let i = 0; i < totalExpenses.length; i++) {
 
         
@@ -59,12 +74,18 @@ export const balance = () => {
         
         totalExpenseMonth += valor;   
 
-        let expenseTotal = parseFloat(totalExpenseMonth).toFixed(2);
         
-        const tableTotalExpense = document.querySelector(".total-expense");
-        tableTotalExpense.innerHTML = expenseTotal;
         
     }
+    let expenseTotal = parseFloat(totalExpenseMonth).toFixed(2);
+    const tableTotalExpense = document.querySelector(".total-expense");
+    if(totalExpenses.length == 0){
+        tableTotalExpense.innerHTML = "0";
+    }
+    else{
+        tableTotalExpense.innerHTML = expenseTotal;
+    }
+    //
     for (let i = 0; i < qtClient1.length; i++) {
 
         
@@ -75,12 +96,17 @@ export const balance = () => {
         
         totalClientStore1 += valor;   
 
-        let clientTotal = parseInt(totalClientStore1);
-        
-        const tableTotalClient = document.querySelector(".qt1");
-        tableTotalClient.innerHTML = clientTotal;
-        
     }
+    let clientTotal = parseInt(totalClientStore1);
+        
+    const tableTotalClient1 = document.querySelector(".qt1");
+    if(qtClient1.length == 0){
+        tableTotalClient1.innerHTML = "0";
+    }
+    else{
+        tableTotalClient1.innerHTML = clientTotal;
+    }
+    //
     for (let i = 0; i < qtClient2.length; i++) {
 
         
@@ -90,13 +116,18 @@ export const balance = () => {
     
         
         totalClientStore2 += valor;   
-
-        let clientTotal = parseInt(totalClientStore2);
-        
-        const tableTotalClient = document.querySelector(".qt2");
-        tableTotalClient.innerHTML = clientTotal;
         
     }
+    let clientTotal2 = parseInt(totalClientStore2);
+        
+    const tableTotalClient2 = document.querySelector(".qt2");
+    if(qtClient2.length == 0){
+        tableTotalClient2.innerHTML = "0";
+    }
+    else{
+        tableTotalClient2.innerHTML = clientTotal2;
+    }
+    //
 
     let balance = parseFloat((totalMonthStore1 + totalMonthStore2) - totalExpenseMonth).toFixed(2);
     let tableBalance = document.querySelector(".balance")
