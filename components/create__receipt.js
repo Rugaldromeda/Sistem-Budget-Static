@@ -39,16 +39,16 @@ const inputDataReceipt = (formId) => {
     const dataY = dateValue.format('YYYY')
 
     const receiptMoney = formBody.querySelector("[data-receipt-money]");
-    const moneyValue = Number(receiptMoney.value);
+    const moneyValue = Number(receiptMoney.value.replace(",","."));
 
     const receiptDebit = formBody.querySelector("[data-receipt-debit]");
-    const debitValue = Number(receiptDebit.value);
+    const debitValue = Number(receiptDebit.value.replace(",","."));
 
     const receiptCredit = formBody.querySelector("[data-receipt-credit]");
-    const creditValue = Number(receiptCredit.value);
+    const creditValue = Number(receiptCredit.value.replace(",","."));
 
     const receiptVoucher = formBody.querySelector("[data-receipt-voucher]");
-    const voucherValue = Number(receiptVoucher.value);
+    const voucherValue = Number(receiptVoucher.value.replace(",","."));
 
     const totalDay = parseFloat(moneyValue + debitValue + creditValue + voucherValue).toFixed(2);
 

@@ -8,7 +8,6 @@ export const getPeriod = (event) => {
     const finalTimeValue = moment(finalTime.value);
     const final = finalTimeValue.format('YYYYMMDD');
 
-    console.log(final)
 
     searchPeriod(initial,final);
 
@@ -72,7 +71,7 @@ const searchPeriod = (startTime, finishTime) => {
         arrayReceiptsSt2.push(dataReceipt2)
         
     }
-    console.log(arrayExpenses)
+    
     let periodExpenses = arrayExpenses.filter(arrayExpenses => (arrayExpenses.dateSelect >= `${startTime}` && arrayExpenses.dateSelect <= `${finishTime}`));
     let periodReceitpsSt1 = arrayReceiptsSt1.filter(arrayReceipt1 => (arrayReceipt1.dateSelect >= `${startTime}` && arrayReceipt1.dateSelect <= `${finishTime}`));
     let periodReceitpsSt2 = arrayReceiptsSt2.filter(arrayReceipt2 => (arrayReceipt2.dateSelect >= `${startTime}` && arrayReceipt2.dateSelect <= `${finishTime}`));
@@ -155,5 +154,5 @@ const searchPeriod = (startTime, finishTime) => {
     }
     tableBalance.innerHTML = balancePeriod;
     tableTotalClient.innerHTML = totalClientPeriod;
-    console.log(periodExpenses)
+    
 }

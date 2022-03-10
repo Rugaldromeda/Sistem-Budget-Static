@@ -81,8 +81,7 @@ export const tablesLoad = () => {
         }
         
     })
-    //const teste = document.querySelectorAll(".table-receipts");
-    //console.log(teste)
+    
 
     balance()
 }

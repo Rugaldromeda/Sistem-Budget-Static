@@ -40,7 +40,7 @@ const inputDataExpense = (formId) => {
     const nameValue = expenseName.value;
 
     const expenseValue = formBody.querySelector("[data-expense-value]");
-    const value = parseFloat(expenseValue.value).toFixed(2);
+    const value = parseFloat(expenseValue.value.replace(",",".")).toFixed(2);
 
     
 
