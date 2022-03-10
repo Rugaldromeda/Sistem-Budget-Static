@@ -1,3 +1,4 @@
+"use strict"
 import {buttonEdit} from "./td__report__action/buttonEdit.js";
 import { buttonEditExpense } from "./td__report__action/buttonExpenseEdit.js";
 import buttonDelet from "./td__report__action/buttonDelet.js";

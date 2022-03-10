@@ -1,3 +1,4 @@
+"use strict"
 export const getPeriod = (event) => {
     event.preventDefault();
     const initialTime = document.querySelector("[data-input-initial]");

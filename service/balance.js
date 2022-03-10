@@ -1,4 +1,4 @@
-
+"use strict"
 export const balance = () => {
     const store1 = document.querySelector(".tableReceiptStore1");
     const store2 = document.querySelector(".tableReceiptStore2");

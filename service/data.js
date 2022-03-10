@@ -1,4 +1,4 @@
-
+"use strict"
 export const orderDates = (date) => {
     // sort é um metodo para ordenar elementos num array
     date.sort((a, b) => {

@@ -1,4 +1,4 @@
-
+"use strict"
 const menuOnscroll = () => {
     const headerMenu = document.querySelector('[data-header-menu]');
 

@@ -1,3 +1,4 @@
+"use strict"
 import { tablesLoad } from "../components/tables__load.js";
 let dateToday = new Date();
 const dateYm = new Date()

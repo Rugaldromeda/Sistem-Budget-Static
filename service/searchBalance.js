@@ -1,4 +1,4 @@
-
+"use strict"
 
 export const filterYear = (event) =>{
     event.preventDefault()

@@ -1,3 +1,4 @@
+"use strict"
 export const tabActive = (seletorDiv, seletorTab) =>{
     const conteudo = document.querySelector(seletorDiv);
     const tab = document.querySelector(seletorTab);

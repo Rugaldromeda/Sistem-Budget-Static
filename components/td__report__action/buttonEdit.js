@@ -1,3 +1,5 @@
+"use strict"
+
 const loadTrInput = (loadtable, id, trId) => {
     const index = id;
 

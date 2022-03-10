@@ -1,4 +1,4 @@
-
+"use strict"
 // menu muda de cor ao descer a pagina
 import menuOnscroll from "./components/header__bottom.js";
 //

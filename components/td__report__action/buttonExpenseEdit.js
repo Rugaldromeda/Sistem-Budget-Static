@@ -1,3 +1,5 @@
+"use strict"
+
 const loadExpenseInput = (loadtable, id, trId) => {
     const index = id;
 

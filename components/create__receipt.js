@@ -1,3 +1,5 @@
+"use strict"
+
 import { editTr } from "./td__report__action/buttonEdit.js";
 import { createTd, actionArea } from "./createTd.js";
 import { tablesLoad } from "./tables__load.js";

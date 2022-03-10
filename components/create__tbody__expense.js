@@ -1,3 +1,5 @@
+"use strict"
+
 import { Expense } from "./create__expenses.js";
 import { orderDates } from "../service/data.js";
 

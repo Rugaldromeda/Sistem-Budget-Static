@@ -1,3 +1,5 @@
+"use strict"
+
 const deletTr = (loadtable, id, formId) => {
     const index = id;
     const elementSaved = JSON.parse(localStorage.getItem(`${formId}`)) || [];

@@ -1,3 +1,5 @@
+"use strict"
+
 import {Receipt} from "./create__receipt.js";
 import { orderDates } from "../service/data.js";
 

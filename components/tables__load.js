@@ -1,4 +1,4 @@
-
+"use strict"
 import { createTbodyExpense } from "./create__tbody__expense.js";
 import { createTbodyReceipt } from "./create__tbody__receipt.js";
 import { balance } from "../service/balance.js";

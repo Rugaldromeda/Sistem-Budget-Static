@@ -1,3 +1,5 @@
+"use strict"
+
 export const clearForm = (event) => {
     const idForm = event.target.getAttribute("id");
     const formClear = document.querySelector(`.${idForm}`);
