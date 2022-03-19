@@ -128,7 +128,7 @@
 }
 /* balance */
 .report__table__balance {
-    align-self: flex-end;
+    align-self: flex-start;
     margin: 0 auto;
     border: solid 1px;
     
