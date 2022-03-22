@@ -11,6 +11,15 @@
     .report{
         flex-flow: column wrap;
     }
+    .report__legend {
+        margin: 0 !important;
+    }
+    .report__table__balance th {
+        width: auto; 
+    }
+    .report__table th {
+        width: auto;
+    }
 }
 .report__form__add{
     display: flexbox;

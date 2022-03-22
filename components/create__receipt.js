@@ -85,7 +85,7 @@ export const Receipt = ({dateFormat, moneyValue, debitValue, creditValue, vouche
     tableTr.appendChild(createTd(debitValue));
     tableTr.appendChild(createTd(creditValue));
     tableTr.appendChild(createTd(voucherValue));
-    tableTr.appendChild(createTd(totalDay)).classList.add("total");
+    tableTr.appendChild(createTd(`<a class="total">${totalDay}</a>`));
     tableTr.appendChild(createTd(`<a class="qtClient">${qtClientValue}</a>`));
     tableTr.appendChild(actionArea(tablesLoad, id, formId));
     
