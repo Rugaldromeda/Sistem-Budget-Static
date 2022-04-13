@@ -1,0 +1,52 @@
+/* 
+    File Name: header.css
+    Template Name: enterprise budget
+    Created By: Gabriel Lima 
+
+
+    1 - header
+    2 - global style
+*/
+
+/* 1 - header*/
+
+.menu {
+    background-color: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items:center;
+    padding: 5px;
+    width: 100%;
+    transition:  0.8s;
+}
+
+.menu_onscroll {
+    background-color: rgba(0, 0, 0, 0.692);
+    float: left;
+    z-index: 99;
+    transition: 1s;
+    position: fixed;
+}
+.menu__img {
+    width: 100px;
+    align-self:flex-start;
+    margin-left: 20px !important;
+}
+.menu__nav {
+    position: absolute;
+    right: 20px;
+}
+.menu__ul{
+    display: flex;
+    padding: 0 10px;
+    justify-content: space-around;
+}
+.menu__link{
+    font-size: 25px;
+}
+.menu__link:-webkit-any-link  {
+    color: white;
+}
+.menu__link:hover {
+    color: darkorange;
+}

@@ -1,0 +1,175 @@
+/* Classes para area de relatorios e tables*/
+.report{
+    display: flex;
+    align-content:space-between;
+    align-items: flex-start;
+    
+    margin-top: 1em;
+    
+}
+@media only screen and (max-width: 768px) {
+    .report{
+        flex-flow: column wrap;
+    }
+    .report__legend {
+        margin: 0 !important;
+    }
+    .report__table__balance th {
+        width: auto; 
+    }
+    .report__table th {
+        width: auto;
+    }
+}
+.report__form__add{
+    display: flexbox;
+    font-size: 19px;
+}
+.report__form__input{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-around;
+    gap: 5px;
+    row-gap: 5px;
+    margin-top: 5px;
+    
+}
+.report__form__input__balance{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    text-align: left;
+    gap: 5px;
+    row-gap: 5px;
+    margin-top: 5px;
+    width: 220px;
+    
+}
+.report__form__input__expense{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-around;
+    gap: 5px;
+    row-gap: 5px;
+    margin-top: 5px;
+    
+}
+.report__form__balance{
+    display: flex;
+    max-width: 150px;
+    margin-top: 15px;
+    
+}
+.report__form__input li {
+    display: flex;
+    flex-flow: column wrap;
+}
+.report__input {
+    max-width: 90px;
+    margin: 0;
+}
+.report__input__name {
+    max-width: 150px;
+    margin: 0;
+}
+.report__input__date {
+    max-width: 150px;
+    
+}
+.report__li__date {
+    grid-column: 1 / span 2;
+}
+.report__label{
+    font-weight: 700;
+    text-align: left;
+    margin: 0;
+}
+.report__table {
+    align-self: flex-start;
+    margin: 0 auto;
+    border: solid 1px;
+    
+}
+.report__submit{
+    background-color:dodgerblue;
+    color: white;
+    max-width: 100px;
+    border-radius: 6px;
+    padding: 5px;
+    margin-top: 1em;
+}
+.report__submit__cancel{
+    background-color:tomato;
+    color: white;
+    max-width: 100px;
+    border-radius: 6px;
+    border: black solid 1.5px;
+    padding: 3px;
+    margin-top: 1em;
+    cursor: pointer;
+}
+.report__table thead {
+    border: solid 1px;
+}
+.report__table th {
+    padding: 10px;
+    width: 80px;
+    border: solid 1px;
+    font-weight: 700;
+}
+.report__table__name{
+    width: 160px !important;
+}
+.report__table td {
+    border-bottom: solid 1px;
+    padding: 5px 0;
+    border-left: solid 1px;
+}
+
+.report__legend {
+    margin: 0 auto;
+    font-weight: 700;
+}
+.report__description{
+    margin: 5px auto 10px ;
+    font-weight: 500;
+    text-align: left;
+}
+/* balance */
+.report__table__balance {
+    align-self: flex-start;
+    margin: 0 auto;
+    border: solid 1px;
+    
+}
+
+.report__table__balance thead {
+    border: solid 1px;
+}
+
+.report__table__balance th {
+    padding: 10px;
+    width: 300px;
+    border: solid 1px;
+    font-weight: 700;
+}
+
+.report__table__balance td {
+    border-bottom: solid 1px;
+    padding: 5px 0;
+    border-left: solid 1px;
+    width: 200px;
+}
+.th__qtClients{
+    width: 110px !important;
+}
+.td__qtClients{
+    width: 100px !important;
+}
+.monthName {
+    text-transform:capitalize;
+}
+
+.negative-balance {
+    color: red;
+}
