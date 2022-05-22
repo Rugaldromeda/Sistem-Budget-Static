@@ -2,7 +2,7 @@
 
 export const newArrayData = (data) => {
     /* a const newArrayData deixa um meio termo, se não tiver nenhum valor salvo no 
-    local storage chamado tarefas serão atribuido os valores de tarefasAtualizadas,
+    local storage chamado monthYear serão atribuido os valores de dataUpdate,
     e quando tiver algo será criado um novo array  */
     const arrayData = JSON.parse(localStorage.getItem('monthYear')) || [] 
 

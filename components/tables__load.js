@@ -43,12 +43,10 @@ export const tablesLoad = () => {
 
         arrayData.forEach( (dataYm) => {
             
-            if(listValueStore === dataYm && listId === "receiptStore1" ){
+            if(listValueStore === dataYm ){
                 listsStore.insertBefore(createTbodyReceipt(dataYm, listId) ,listsStore.children[1]);
             }
-            if(listValueStore === dataYm && listId === "receiptStore2" ){
-                listsStore.insertBefore(createTbodyReceipt(dataYm, listId) ,listsStore.children[1]);
-            }
+            
             
         })
 
