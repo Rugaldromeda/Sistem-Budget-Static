@@ -25,22 +25,15 @@ export const setDateCurrent = () =>{
     const monthName = dateToday.toLocaleString("pt-BR", { month: "long" });
     
     const legendMonth = document.querySelectorAll(".monthName");
+
     const legendYear = document.querySelectorAll(".yearName");
-    for (let i = 0; i < legendMonth.length; i++) {
-        const legMonth = legendMonth[i];
-        legMonth.innerHTML = monthName
-    }
-    for (let i = 0; i < legendYear.length; i++) {
-        const legYear = legendYear[i];
-        legYear.innerHTML = year;
-    }
+
+    const updateData = (item, data) => { item.innerHTML = data};
+
+    legendMonth.forEach((element)=> updateData(element, monthName));
     
-    for (let i = 0; i < tables.length; i++) {
-        const tablesI = tables[i];
-
-        
-
-        tablesI.setAttribute("value", dateCurrent)
-        
-    }
+    legendYear.forEach((element) => updateData(element, year));
+    
+    tables.forEach((element) => element.setAttribute("value", dateCurrent) );
+   
 }

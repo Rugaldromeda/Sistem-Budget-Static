@@ -3,10 +3,10 @@ export const getPeriod = (event) => {
     event.preventDefault();
     const initialTime = document.querySelector("[data-input-initial]");
     const finalTime = document.querySelector("[data-input-final]");
-    const initialTimeValue = moment(initialTime.value);
-    const initial = initialTimeValue.format('YYYYMMDD');
-    const finalTimeValue = moment(finalTime.value);
-    const final = finalTimeValue.format('YYYYMMDD');
+    const initialTimeValue = dayjs(initialTime.value);
+    const initial = dayjs(initialTimeValue).format('YYYYMMDD');
+    const finalTimeValue = dayjs(finalTime.value);
+    const final = dayjs(finalTimeValue).format('YYYYMMDD');
 
 
     searchPeriod(initial,final);
@@ -22,8 +22,8 @@ const searchPeriod = (startTime, finishTime) => {
     for (let i = 0; i < expensesSaved.length; i++) {
         const listExpense = expensesSaved[i];
         const dateFormat = listExpense.dateFormat;
-        const dateRaw = moment(dateFormat, 'DD/MM/YYYY')
-        const dateSelect = dateRaw.format('YYYYMMDD');
+        const dateRaw = dayjs(dateFormat, 'DD/MM/YYYY')
+        const dateSelect = dayjs(dateRaw).format('YYYYMMDD');
         const value = listExpense.value;
 
 
@@ -38,8 +38,8 @@ const searchPeriod = (startTime, finishTime) => {
     for (let i = 0; i < receiptsSaved1.length; i++) {
         const listReceipt = receiptsSaved1[i];
         const dateFormat = listReceipt.dateFormat;
-        const dateRaw = moment(dateFormat, 'DD/MM/YYYY')
-        const dateSelect = dateRaw.format('YYYYMMDD');
+        const dateRaw = dayjs(dateFormat, 'DD/MM/YYYY')
+        const dateSelect = dayjs(dateRaw).format('YYYYMMDD');
         const totalDay = listReceipt.totalDay;
         const totalClQt = listReceipt.qtClientValue;
 
@@ -56,8 +56,8 @@ const searchPeriod = (startTime, finishTime) => {
     for (let i = 0; i < receiptsSaved2.length; i++) {
         const listReceipt = receiptsSaved2[i];
         const dateFormat = listReceipt.dateFormat;
-        const dateRaw = moment(dateFormat, 'DD/MM/YYYY')
-        const dateSelect = dateRaw.format('YYYYMMDD');
+        const dateRaw = dayjs(dateFormat, 'DD/MM/YYYY')
+        const dateSelect = dayjs(dateRaw).format('YYYYMMDD');
         const totalDay = listReceipt.totalDay;
         const totalClQt = listReceipt.qtClientValue;
 
