@@ -17,8 +17,8 @@ export const createTbodyExpense = (dateYm, formId) => {
 
     expenses.forEach((expense) => {
         
-        const day = moment(expense.dateFormat, 'DD/MM/YYYY');
-        const dayFormatYm = day.format('YYYYMM');
+        const day = dayjs(expense.dateFormat, 'DD/MM/YYYY');
+        const dayFormatYm = dayjs(day).format('YYYYMM');
 
         if(tBodyValue === dayFormatYm ) {
             createTbody.appendChild(Expense(expense, formId));

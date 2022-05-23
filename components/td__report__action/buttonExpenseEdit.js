@@ -8,8 +8,8 @@ const loadExpenseInput = (loadtable, id, trId) => {
 
     const expenseSaved = JSON.parse(localStorage.getItem(`${trId}` , 'dados')) || [];
     const dateFormat = expenseSaved[index].dateFormat;
-    const dateRaw = moment(dateFormat, 'DD/MM/YYYY')
-    const dateSelect = dateRaw.format('YYYY-MM-DD');
+    const dateRaw = dayjs(dateFormat, 'DD/MM/YYYY')
+    const dateSelect = dayjs(dateRaw).format('YYYY-MM-DD');
     const name = expenseSaved[index].nameValue;
     const value = expenseSaved[index].value;
 
@@ -42,8 +42,8 @@ export const editExpenseTr = (editId) => {
     const editInputs = document.querySelector(`.${editId}`)
 
     const expenseDate = editInputs.querySelector("[data-expense-date]");
-    const dateValue = moment(expenseDate.value);
-    const dateFormat = dateValue.format('DD/MM/YYYY');
+    const dateValue = dayjs(expenseDate.value);
+    const dateFormat = dayjs(dateValue).format('DD/MM/YYYY');
 
     const expenseName = editInputs.querySelector("[data-expense-name]");
     const nameValue = expenseName.value;

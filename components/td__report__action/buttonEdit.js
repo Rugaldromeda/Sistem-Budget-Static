@@ -8,8 +8,8 @@ const loadTrInput = (loadtable, id, trId) => {
 
     const receiptSaved = JSON.parse(localStorage.getItem(`${trId}` , 'dados')) || [];
     const dateFormat = receiptSaved[index].dateFormat;
-    const dateRaw = moment(dateFormat, 'DD/MM/YYYY')
-    const dateSelect = dateRaw.format('YYYY-MM-DD');
+    const dateRaw = dayjs(dateFormat, 'DD/MM/YYYY')
+    const dateSelect = dayjs(dateRaw).format('YYYY-MM-DD');
     const money = receiptSaved[index].moneyValue;
     const debit = receiptSaved[index].debitValue;
     const credit = receiptSaved[index].creditValue;
@@ -55,8 +55,8 @@ export const editTr = (editId) => {
     const editInputs = document.querySelector(`.${editId}`)
 
     const receiptDate = editInputs.querySelector("[data-receipt-date]");
-    const dateValue = moment(receiptDate.value);
-    const dateFormat = dateValue.format('DD/MM/YYYY');
+    const dateValue = dayjs(receiptDate.value);
+    const dateFormat = dayjs(dateValue).format('DD/MM/YYYY');
 
     const receiptMoney = editInputs.querySelector("[data-receipt-money]");
     const moneyValue = Number(receiptMoney.value);

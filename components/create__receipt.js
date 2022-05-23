@@ -33,7 +33,7 @@ const inputDataReceipt = (formId) => {
     const formBody = document.querySelector(`#${formId}`);
 
     const receiptDate = formBody.querySelector("[data-receipt-date]");
-    const dateValue = moment(receiptDate.value);
+    const dateValue = dayjs(receiptDate.value);
     const dateFormat = dateValue.format('DD/MM/YYYY');
     const dataYm = dateValue.format('YYYYMM')
     const dataY = dateValue.format('YYYY')

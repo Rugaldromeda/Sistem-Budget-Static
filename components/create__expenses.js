@@ -31,7 +31,7 @@ const inputDataExpense = (formId) => {
     const formBody = document.querySelector(`#${formId}`);
 
     const expenseDate = formBody.querySelector("[data-expense-date]");
-    const dateValue = moment(expenseDate.value);
+    const dateValue = dayjs(expenseDate.value);
     const dateFormat = dateValue.format('DD/MM/YYYY');
     const dataYm = dateValue.format('YYYYMM');
     const dataY = dateValue.format('YYYY');

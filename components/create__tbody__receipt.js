@@ -15,8 +15,8 @@ export const createTbodyReceipt = (dateYm, formId) => {
     
     receipts.forEach((receipt) => {
         
-        const day = moment(receipt.dateFormat, 'DD/MM/YYYY')
-        const dayFormatYm = day.format('YYYYMM')
+        const day = dayjs(receipt.dateFormat, 'DD/MM/YYYY')
+        const dayFormatYm = dayjs(day).format('YYYYMM')
 
         if(tBodyValue === dayFormatYm ) {
             
